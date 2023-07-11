@@ -44,7 +44,10 @@ Route::get('/login', [App\Http\Controllers\AuthController::class, 'login'])->nam
 Route::post('login', [App\Http\Controllers\AuthController::class, 'Postlogin']);
 Route::get('logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
+Route::get('generate-shorten-link', 'ShortLinkController@index');
+Route::post('generate-shorten-link', [App\Http\Controllers\ShortLinkController::class,'store'])->name('generate.shorten.link.post');
 
+Route::get('{code}', 'ShortLinkController@shortenLink')->name('shorten.link');
 
 
 

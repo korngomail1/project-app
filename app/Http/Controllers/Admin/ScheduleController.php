@@ -3,12 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Course;
-use App\Models\CourseTime;
-use App\Models\CoachCourseTime;
-use App\Models\Log;
-use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
+use AshAllenDesign\ShortURL\Facades\ShortURL; 
 
 use Input;
 use Carbon\Carbon;
@@ -28,6 +24,10 @@ class ScheduleController extends Controller
 
     public function index(Request $request)
     {
+        $builder = new \AshAllenDesign\ShortURL\Classes\Builder();
+
+        $shortURLObject = $builder->destinationUrl($request->origrin_url)->make();
+        $shortURL = $shortURLObject->default_short_url;
         return view($this->path . '.index');
     }
 
