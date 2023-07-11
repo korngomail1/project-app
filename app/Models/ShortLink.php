@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Enums\Permission;
 use Illuminate\Database\Eloquent\Model;
-use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 // has Factory
@@ -13,22 +12,32 @@ use Illuminate\Support\Collection;
 
 class ShortLink extends Model
 {
-    use  SoftDeletes, HasFactory;
+    use  SoftDeletes ;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $table = 'short_links';
+    protected $table = 'short_urls';
 
-    protected $primaryKey = 'role_id';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
-        'url',
-        'link',
-        'user_id'
+        'user_id',
+        'destination_url',
+        'url_key',
+        'default_short_url',
+        'single_use',
+        'forward_query_params',
+        'track_visits',
+        'redirect_status_code',
+        'track_ip_address',
+        'track_operating_system',
+        'track_operating_system_version',
+        'track_browser',
+        'track_browser_version',
+        'track_referer_url',
+        'track_device_type',
+        'activated_at',
+        'deactivated_at',
+        'created_at',
+        'updated_at',
+        'deleted_at'
     ];
- 
 }
-

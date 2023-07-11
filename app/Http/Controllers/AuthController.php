@@ -2,19 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Foundation\Http\FormRequest;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request; 
+use App\Http\Controllers\Controller; 
 
 use App\Models\User;
-use App\Models\UserRole;
-
-use Hash;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Validator;
+use Illuminate\Support\Facades\Auth; 
 
 class AuthController extends Controller
 {

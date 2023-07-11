@@ -22,6 +22,8 @@
                 </div>
             </div>
         </form>
-        
+        @if (isset($shortURL))
+        <input  class="form-control" type="text" value="{{$shortURL}}">
+        @endif
     </section>
 </x-app-layout>
