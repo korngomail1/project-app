@@ -16,7 +16,7 @@ class ScheduleController extends Controller
 
     public function index(Request $request)
     {
-        $link = ShortLink::get(); 
+        $link = ShortLink::join('user','user.id','short_urls.user_id')->get(); 
         return view($this->path . '.index',compact('link'));
     }
 
